@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>wanghao的博客</title>
+  <subtitle>朝九晚五的生活，浪迹天涯的追求！编码为生，苦心孤诣！终究是一心一事！</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://wanghao93.github.io/"/>
+  <updated>2017-03-31T15:20:32.000Z</updated>
+  <id>https://wanghao93.github.io/</id>
+  
+  <author>
+    <name>yiyuan</name>
+    <email>yiyuan_simon@163.com</email>
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hexo博客部署</title>
+    <link href="https://wanghao93.github.io/2017/03/31/Hexo%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2/"/>
+    <id>https://wanghao93.github.io/2017/03/31/Hexo博客部署/</id>
+    <published>2017-03-31T13:32:27.000Z</published>
+    <updated>2017-03-31T15:20:32.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>在折腾博客无数次之后，每次换环境之后，都要重新查找资料然后安装。<br>现在把这些安装部署过程记录下来，避免下次重新踩坑。</p>
+<p>根据<a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="external">Hexo官网</a>能进行需要环境的安装和基本使用的教程学习。</p>
+<p>这些安装对于前端工程师来说，驾轻就熟了，主要是后面的config修改问题。</p>
+<h2 id="blog文件的-config-yml"><a href="#blog文件的-config-yml" class="headerlink" title="blog文件的_config.yml"></a>blog文件的_config.yml</h2><p>在所有的配置上基本没遇到问题，主要是后面的插件安装。在这儿遇到了很多问题。</p>
+<ul>
+<li>没能看到 <code>atom.xml,baidusitemap.xm,sitemap.xml</code>这三个文件的生成</li>
+<li>解决方法：重新安装，也报错</li>
+</ul>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Extensions</span></div><div class="line"><span class="comment">## Plugins: https://github.com/hexojs/hexo/wiki/Plugins</span></div><div class="line"><span class="comment">## Themes: https://github.com/hexojs/hexo/wiki/Themes</span></div><div class="line"><span class="attr"> plugins:</span></div><div class="line"><span class="bullet">  -</span> <span class="string">hexo-generator-feed</span></div><div class="line"><span class="bullet">  -</span> <span class="string">hexo-generator-baidu-sitemap</span></div><div class="line"><span class="bullet">  -</span> <span class="string">hexo-generator-sitemap</span></div></pre></td></tr></table></figure>
+<p>在重新安装之后，没有插件，我使用<code>hexo s</code>重启服务器，能正常运行。然后我安装插件，瞟了一眼，在public中生成了<code>atom.xml,baidusitemap.xm,sitemap.xml</code>这三个文件。<br><strong>敲黑板：</strong>生成的资源文件都在public下，不在主目录下。</p>
+<p>这时候信心满满，这次总算能成功了，启动hexo server重试，**还是失败</p>
+<p>然后<a href="https://github.com/coneycode/hexo-generator-baidu-sitemap/issues/5" target="_blank" rel="external">网上查看教程</a>，找了很多版本，进行代码修改，未能成功。然后我注释掉多余的代码，峰回路转，成功运行。插件代码是给你看的，不是执行的<br><figure class="highlight yml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Extensions</span></div><div class="line"><span class="comment">## Plugins: https://github.com/hexojs/hexo/wiki/Plugins</span></div><div class="line"><span class="comment">## Themes: https://github.com/hexojs/hexo/wiki/Themes</span></div><div class="line"><span class="comment"># plugins:</span></div><div class="line"><span class="comment">##  - hexo-generator-feed</span></div><div class="line"><span class="comment">##  - hexo-generator-baidu-sitemap</span></div><div class="line"><span class="comment">##  - hexo-generator-sitemap</span></div></pre></td></tr></table></figure></p>
+<h2 id="themes的-config-yml"><a href="#themes的-config-yml" class="headerlink" title="themes的_config.yml"></a>themes的_config.yml</h2><p>之后选择了<a href="https://github.com/litten/hexo-theme-yilia" target="_blank" rel="external">yilia</a>作为自己的主题<br>相关配置，和主题开发者保持一致。</p>
+<h2 id="添加站点统计"><a href="#添加站点统计" class="headerlink" title="添加站点统计"></a>添加站点统计</h2><p>因为本主题是支持google 分析和百度分析的，所以直接在主题配置环境中添加自己的博客地址就可以了<br><figure class="highlight yml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Miscellaneous</span></div><div class="line"><span class="attr">baidu_analytics:</span> <span class="string">'https://wanghao93.github.io/'</span></div><div class="line"><span class="attr">google_analytics:</span> <span class="string">'https://wanghao93.github.io/'</span></div></pre></td></tr></table></figure></p>
+<p>给博客添加可见的评论，浏览量，还有每篇的数量，使用的是<a href="http://busuanzi.ibruce.info/" target="_blank" rel="external">不蒜子</a></p>
+<h2 id="网站收录"><a href="#网站收录" class="headerlink" title="网站收录"></a>网站收录</h2><p>这个就是使用插件搞定的,安装这两个插件即可<code>hexo-generator-baidu-sitemap,hexo-generator-sitemap</code></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在折腾博客无数次之后，每次换环境之后，都要重新查找资料然后安装。&lt;br&gt;现在把这些安装部署过程记录下来，避免下次重新踩坑。&lt;/p&gt;
+&lt;p&gt;根据&lt;a href=&quot;https://hexo.io/zh-cn/docs/&quot; target=&quot;_blank&quot; rel=&quot;externa
+    
+    </summary>
+    
+    
+      <category term="hexo" scheme="https://wanghao93.github.io/tags/hexo/"/>
+    
+      <category term="blog" scheme="https://wanghao93.github.io/tags/blog/"/>
+    
+  </entry>
+  
+</feed>
