@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wanghao93.github.io/"/>
-  <updated>2017-04-01T01:49:10.000Z</updated>
+  <updated>2017-04-01T07:59:27.000Z</updated>
   <id>https://wanghao93.github.io/</id>
   
   <author>
@@ -14,6 +14,38 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>矫情的IE</title>
+    <link href="https://wanghao93.github.io/2017/04/01/%E7%9F%AB%E6%83%85%E7%9A%84IE/"/>
+    <id>https://wanghao93.github.io/2017/04/01/矫情的IE/</id>
+    <published>2017-04-01T06:41:21.000Z</published>
+    <updated>2017-04-01T07:59:27.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>在那洪荒时代，ie一统天下，诸子百家，莫敢不服。各大网站，也只能俯首帖耳，想着办法去兼容他，不是它有多么好，而是window+ie让人欲罢不能。<br>Google的V8引擎，给人带来了希望，性能提速，前端开始繁荣，移动互联网时代，开始到来。微软也开始面向开源，ie逐渐退出历史舞台，自家格了自家ie的命，也是一代大家所为。<br>奈何使用者多年习惯使然，中国的系统更新缓慢。国内厂商，套壳的浏览器，创新不多，但能开始不去使用ie内核，也是极为鼓舞人心之事。陈旧的浏览器和系统，依然有大批人去进行使用。只能在各个层面去努力进行淘汰，未来的世界终究一片光明！<br>如此多的开发者和从业者，给人们带来更快更酷炫更便捷的方式为何没人使用？终究是人性中的惰性，不可轻易更换习惯？<br>人们要使用，那么我们就只有宠着他们，顾客是上帝，此乃真理！</p>
+<p>以 <strong>矫情的IE</strong>为题，记录工作中，遇到的各个浏览器兼容性的问题。取名ie，但不限于ie，但前端开发者，最为痛心疾首者也就IE是也。</p>
+<h1 id="IE"><a href="#IE" class="headerlink" title="IE"></a>IE</h1><h3 id="逗号"><a href="#逗号" class="headerlink" title="逗号"></a>逗号</h3><p>在开发的时候，突然会发现有这种报错的情况<br><img src="/assets/img/ie/ie_dot.png" alt=""><br>我们在开发过程中，能准确的发现这种报错的机制，从而采取正确的措施，把这个逗号去掉就不会报错了。</p>
+<p>如果只是开发，并且不考虑兼容性的问题，其他浏览器都自动做了处理，不会报错！<br>所以这种错误，在上线打包了之后去查找，这时候反工重新修改代码，bug调试成本和困难度都会增加。</p>
+<p>目前只能以提高代码质量和使用ESLite配合检查</p>
+<hr>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在那洪荒时代，ie一统天下，诸子百家，莫敢不服。各大网站，也只能俯首帖耳，想着办法去兼容他，不是它有多么好，而是window+ie让人欲罢不能。&lt;br&gt;Google的V8引擎，给人带来了希望，性能提速，前端开始繁荣，移动互联网时代，开始到来。微软也开始面向开源，ie逐渐退出
+    
+    </summary>
+    
+    
+      <category term="ie" scheme="https://wanghao93.github.io/tags/ie/"/>
+    
+      <category term="compatibility" scheme="https://wanghao93.github.io/tags/compatibility/"/>
+    
+      <category term="兼容性" scheme="https://wanghao93.github.io/tags/%E5%85%BC%E5%AE%B9%E6%80%A7/"/>
+    
+      <category term="逗号" scheme="https://wanghao93.github.io/tags/%E9%80%97%E5%8F%B7/"/>
+    
+  </entry>
   
   <entry>
     <title>Hexo博客部署</title>
