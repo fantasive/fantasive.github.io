@@ -5,7 +5,7 @@
     
   <url>
     <loc>https://wanghao93.github.io/2017/04/01/%E7%9F%AB%E6%83%85%E7%9A%84IE/</loc>
-    <lastmod>2017-04-01T07:59:27.000Z</lastmod>
+    <lastmod>2017-04-12T13:37:04.000Z</lastmod>
     <data>
         <display>
         <title>矫情的IE</title>
@@ -16,8 +16,6 @@
         <tag>compatibility</tag>
          
         <tag>兼容性</tag>
-         
-        <tag>逗号</tag>
          
          
            

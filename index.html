@@ -204,7 +204,22 @@ var _hmt = _hmt || [];
 <p>如果只是开发，并且不考虑兼容性的问题，其他浏览器都自动做了处理，不会报错！<br>所以这种错误，在上线打包了之后去查找，这时候反工重新修改代码，bug调试成本和困难度都会增加。</p>
 <p>目前只能以提高代码质量和使用ESLite配合检查</p>
 <hr>
-
+<h3 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h3><p>ie中遇到的问题还有一个是块注释中不能使用<code>@param</code>符号<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line">  * Find the node with the given name using a depth first traversal.</div><div class="line">  * Does not modify the DomReader's current node.</div><div class="line">  *</div><div class="line">  * @param name &#123;String&#125; The name of the node to find</div><div class="line">  * @return the node that was found, or null if not found</div><div class="line">  */</div></pre></td></tr></table></figure></p>
+<p>这种代码 <code>@param</code>,会被ie打包的时候解析出来，并且报错</p>
+<h3 id="document-execCommand"><a href="#document-execCommand" class="headerlink" title="document.execCommand"></a>document.execCommand</h3><p>这个主要是火狐的bug<br><a href="https://www.quirksmode.org/dom/execCommand.html" target="_blank" rel="external">execCommand兼容性</a><br><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Document/execCommand#浏览器兼容性" target="_blank" rel="external">MDN的文档</a>，<br>我们在里面看看文档，就能看到其实现的差异<br><code>bool = document.execCommand(aCommandName, aShowDefaultUI, aValueArgument)</code></p>
+<ul>
+<li>返回值</li>
+</ul>
+<p>一个 Boolean ，如果是 false 则表示操作不被支持或未被启用。</p>
+<ul>
+<li>参数</li>
+</ul>
+<ol>
+<li>aCommandName<br>一个 DOMString ，命令的名称。可用命令列表请参阅 命令 。</li>
+<li>aShowDefaultUI<br>一个 Boolean 是否展示用户界面，一般为 false。<strong>Mozilla 没有实现</strong>(因为火狐没有支持这个，所以填写为false即可)。</li>
+<li>aValueArgument<br>一些命令需要一些额外的参数值（如insertimage需要提供这个image的url）。默认为null。</li>
+</ol>
+<h3 id="document-onbeforeunload"><a href="#document-onbeforeunload" class="headerlink" title="document.onbeforeunload"></a>document.onbeforeunload</h3>
       
       
       
@@ -226,10 +241,6 @@ var _hmt = _hmt || [];
       		 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">兼容性</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">逗号</a>
         		</li>
       		
 		</ul>
@@ -440,19 +451,7 @@ var _hmt = _hmt || [];
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">blog</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">ie</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">IE</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -464,7 +463,11 @@ var _hmt = _hmt || [];
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">逗号</a>
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">blog</a>
               </li>
             
             <div class="clearfix"></div>
