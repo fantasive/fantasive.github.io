@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="wanghao的博客">
 <meta property="og:description" content="在那洪荒时代，ie一统天下，诸子百家，莫敢不服。各大网站，也只能俯首帖耳，想着办法去兼容他，不是它有多么好，而是window+ie让人欲罢不能。Google的V8引擎，给人带来了希望，性能提速，前端开始繁荣，移动互联网时代，开始到来。微软也开始面向开源，ie逐渐退出历史舞台，自家格了自家ie的命，也是一代大家所为。奈何使用者多年习惯使然，中国的系统更新缓慢。国内厂商，套壳的浏览器，创新不多，但能开">
 <meta property="og:image" content="https://wanghao93.github.io/assets/img/ie/ie_dot.png">
-<meta property="og:updated_time" content="2017-04-13T14:55:16.000Z">
+<meta property="og:updated_time" content="2017-04-14T03:09:09.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="矫情的IE">
 <meta name="twitter:description" content="在那洪荒时代，ie一统天下，诸子百家，莫敢不服。各大网站，也只能俯首帖耳，想着办法去兼容他，不是它有多么好，而是window+ie让人欲罢不能。Google的V8引擎，给人带来了希望，性能提速，前端开始繁荣，移动互联网时代，开始到来。微软也开始面向开源，ie逐渐退出历史舞台，自家格了自家ie的命，也是一代大家所为。奈何使用者多年习惯使然，中国的系统更新缓慢。国内厂商，套壳的浏览器，创新不多，但能开">
@@ -104,6 +104,8 @@ var _hmt = _hmt || [];
 		        
 					<a class="rss" target="_blank" href="/atom.xml" title="rss"><i class="icon-rss"></i></a>
 		        
+					<a class="csdnblog" target="_blank" href="http://blog.csdn.net/ie_world/" title="csdnblog"><i class="icon-csdnblog"></i></a>
+		        
 			</div>
 		</nav>
 	</header>		
@@ -150,6 +152,8 @@ var _hmt = _hmt || [];
 						<a class="facebook" target="_blank" href="https://www.facebook.com/hhermeswang" title="facebook"><i class="icon-facebook"></i></a>
 			        
 						<a class="rss" target="_blank" href="/atom.xml" title="rss"><i class="icon-rss"></i></a>
+			        
+						<a class="csdnblog" target="_blank" href="http://blog.csdn.net/ie_world/" title="csdnblog"><i class="icon-csdnblog"></i></a>
 			        
 				</div>
 			</nav>
@@ -218,9 +222,9 @@ var _hmt = _hmt || [];
 <ol>
 <li>aCommandName<br>一个 DOMString ，命令的名称。可用命令列表请参阅 命令 。</li>
 <li>aShowDefaultUI<br>一个 Boolean 是否展示用户界面，一般为 false。<strong>Mozilla 没有实现</strong>(因为火狐没有支持这个，所以填写为false即可)。</li>
-<li>aValueArgument<br>一些命令需要一些额外的参数值（如insertimage需要提供这个image的url）。默认为null。<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 解决火狐中不能使用' &lt;font color="red"&gt;&lt;/font&gt; '的问题</span></div><div class="line"><span class="comment">// 这个必须使用style行内样式 ' &lt;font style="color:red;"&gt;&lt;/font&gt; '</span></div><div class="line"><span class="keyword">var</span> selectionObj = <span class="built_in">window</span>.getSelection();</div><div class="line"><span class="keyword">var</span> selectedText = selectionObj.toString();</div><div class="line"><span class="keyword">var</span> rangObj = selectedObj.getRangAt(<span class="number">0</span>);</div><div class="line"><span class="keyword">var</span> docFragment = rangeObj.cloneContents();</div><div class="line"><span class="keyword">var</span> tempDiv = <span class="built_in">document</span>.createElement(<span class="string">'div'</span>);</div><div class="line">tempDiv.appendChild(docFragment);</div><div class="line"></div><div class="line"><span class="keyword">var</span> selectedHtml = tempDiv.innerHTML;</div><div class="line"></div><div class="line"><span class="built_in">document</span>.execCommand(<span class="string">'insertHTML'</span>,<span class="literal">false</span>, <span class="string">"&lt;font style='color:"</span>+color+<span class="string">"'&gt;"</span>+selectedHtml+<span class="string">"&lt;/font&gt;"</span>)</div></pre></td></tr></table></figure>
-</li>
+<li>aValueArgument<br>一些命令需要一些额外的参数值（如insertimage需要提供这个image的url）。默认为null。</li>
 </ol>
+<p>ie和其他有兼容性的问题需要解决，[一篇写的不错的文章] (<a href="http://www.cnblogs.com/TheViper/p/4633745.html" target="_blank" rel="external">http://www.cnblogs.com/TheViper/p/4633745.html</a>)<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 解决火狐中不能使用' &lt;font color="red"&gt;&lt;/font&gt; '的问题</span></div><div class="line"><span class="comment">// 这个必须使用style行内样式 ' &lt;font style="color:red;"&gt;&lt;/font&gt; '</span></div><div class="line"><span class="keyword">var</span> selectionObj = <span class="built_in">window</span>.getSelection();</div><div class="line"><span class="keyword">var</span> selectedText = selectionObj.toString();</div><div class="line"><span class="keyword">var</span> rangObj = selectedObj.getRangAt(<span class="number">0</span>);</div><div class="line"><span class="keyword">var</span> docFragment = rangeObj.cloneContents();</div><div class="line"><span class="keyword">var</span> tempDiv = <span class="built_in">document</span>.createElement(<span class="string">'div'</span>);</div><div class="line">tempDiv.appendChild(docFragment);</div><div class="line"></div><div class="line"><span class="keyword">var</span> selectedHtml = tempDiv.innerHTML;</div><div class="line"></div><div class="line"><span class="built_in">document</span>.execCommand(<span class="string">'insertHTML'</span>,<span class="literal">false</span>, <span class="string">"&lt;font style='color:"</span>+color+<span class="string">"'&gt;"</span>+selectedHtml+<span class="string">"&lt;/font&gt;"</span>)</div></pre></td></tr></table></figure></p>
 <h3 id="document-onbeforeunload"><a href="#document-onbeforeunload" class="headerlink" title="document.onbeforeunload"></a>document.onbeforeunload</h3><p>这个命令主要是在网页关闭之前会进行调用。<br><a href="http://www.cnblogs.com/fredlau/archive/2009/06/10/1500490.html" target="_blank" rel="external">onbeforeunload的基本知识</a><br>这个onbeforeunload在调用的过程中，只要有链接的转变，就会触发这个函数，为了不触发这个函数，可以在点击的函数中阻止默认行为<code>e.preventDefault()</code>,这样可以避免每次点击的时候，都有弹出提示框。</p>
 
       
@@ -463,6 +467,14 @@ var _hmt = _hmt || [];
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">blog</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">ie</a>
               </li>
              
@@ -472,14 +484,6 @@ var _hmt = _hmt || [];
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">兼容性</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">blog</a>
               </li>
             
             <div class="clearfix"></div>
