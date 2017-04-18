@@ -6,17 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://wanghao93.github.io">
-  <title>Archives: 2017 | wanghao的博客</title>
+  <title>代码逻辑.md | wanghao的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="前端程序员，眼光底下，伏首尔行。一心修一道，一道可成？一心追一生，一生可期？">
-<meta property="og:type" content="website">
-<meta property="og:title" content="wanghao的博客">
-<meta property="og:url" content="https://wanghao93.github.io/archives/2017/index.html">
+  <meta name="description" content="今天在使用 window.onbeforeUnload 这个方法的时候，在想到如何去屏蔽这个代码的，有的部分代码不希望其执行，但是这个又是全局监听的，所以这时候，考虑把这个方法设为空，然后关闭浏览器，不会弹出提示框，完美解决。代码实现
+1&amp;lt;button id=&quot;button&quot;&amp;gt;关闭浏览器页面&amp;lt;/button&amp;gt;
+12345678910111213141516171819202">
+<meta property="og:type" content="article">
+<meta property="og:title" content="代码逻辑.md">
+<meta property="og:url" content="https://wanghao93.github.io/2017/04/18/写代码逻辑/index.html">
 <meta property="og:site_name" content="wanghao的博客">
-<meta property="og:description" content="前端程序员，眼光底下，伏首尔行。一心修一道，一道可成？一心追一生，一生可期？">
+<meta property="og:description" content="今天在使用 window.onbeforeUnload 这个方法的时候，在想到如何去屏蔽这个代码的，有的部分代码不希望其执行，但是这个又是全局监听的，所以这时候，考虑把这个方法设为空，然后关闭浏览器，不会弹出提示框，完美解决。代码实现
+1&amp;lt;button id=&quot;button&quot;&amp;gt;关闭浏览器页面&amp;lt;/button&amp;gt;
+12345678910111213141516171819202">
+<meta property="og:updated_time" content="2017-04-18T15:14:41.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="wanghao的博客">
-<meta name="twitter:description" content="前端程序员，眼光底下，伏首尔行。一心修一道，一道可成？一心追一生，一生可期？">
+<meta name="twitter:title" content="代码逻辑.md">
+<meta name="twitter:description" content="今天在使用 window.onbeforeUnload 这个方法的时候，在想到如何去屏蔽这个代码的，有的部分代码不希望其执行，但是这个又是全局监听的，所以这时候，考虑把这个方法设为空，然后关闭浏览器，不会弹出提示框，完美解决。代码实现
+1&amp;lt;button id=&quot;button&quot;&amp;gt;关闭浏览器页面&amp;lt;/button&amp;gt;
+12345678910111213141516171819202">
   
   
     <link rel="icon" href="/favicon.ico">
@@ -180,36 +187,68 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-写代码逻辑" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/04/18/写代码逻辑/" class="archive-article-date">
-  	<time datetime="2017-04-18T14:49:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-18</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/04/18/写代码逻辑/">代码逻辑.md</a>
+    <h1 class="article-title" itemprop="name">
+      代码逻辑.md
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2017/04/18/写代码逻辑/" class="archive-article-date">
+  	<time datetime="2017-04-18T14:49:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-18</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>今天在使用 <code>window.onbeforeUnload</code> 这个方法的时候，在想到如何去屏蔽这个代码的，有的部分代码不希望其执行，但是这个又是全局监听的，所以这时候，考虑把这个方法设为空，然后关闭浏览器，不会弹出提示框，完美解决。<br>代码实现</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">"button"</span>&gt;</span>关闭浏览器页面<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 用户进来这个页面，为其添加一个关闭页面的提醒功能</span></div><div class="line"><span class="built_in">window</span>.onbeforeunload = <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</div><div class="line">  e = e || <span class="built_in">window</span>.event;</div><div class="line"></div><div class="line">  <span class="comment">// 兼容IE8和Firefox 4之前的版本</span></div><div class="line">  <span class="keyword">if</span> (e) &#123;</div><div class="line">    e.returnValue = <span class="string">'关闭提示'</span>;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="comment">// Chrome, Safari, Firefox 4+, Opera 12+ , IE 9+</span></div><div class="line">  <span class="keyword">return</span> <span class="string">'关闭提示'</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 如果要关闭浏览器,兼容ie</span></div><div class="line"><span class="keyword">var</span> btnClick = <span class="built_in">document</span>.getElementById(<span class="string">"button"</span>)</div><div class="line">btnClick.addEventListener(<span class="string">"click"</span>, <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</div><div class="line"></div><div class="line">&#125;)</div><div class="line"></div><div class="line">pollyEvent(btnClick, <span class="string">'click'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="comment">// 此时如果不对window.onbeforeunload 进行处理，则每次都会提示是否关闭浏览器，</span></div><div class="line">  <span class="comment">// 这显然不是我们想要的结果，所以把window.onbeforeunload 清空</span></div><div class="line">  <span class="built_in">window</span>.onbeforeunload = <span class="literal">null</span></div><div class="line">  <span class="comment">// 把这个函数清除了就能避免每次都弹出提示框，达成目标</span></div><div class="line">  <span class="built_in">window</span>.addEventListener ? <span class="built_in">window</span>.close() : (<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">window</span>.open(<span class="string">''</span>,<span class="string">'_self'</span>,<span class="string">''</span>)</div><div class="line">    <span class="built_in">window</span>.close()</div><div class="line">  &#125;)()</div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">pollyEvent</span> (<span class="params">elm, type, callback</span>) </span>&#123;</div><div class="line">  <span class="built_in">document</span>.addEventListener ? elm.addEventListener(type, callback) : elm.atachEvent(<span class="string">'on'</span>+type, callback)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+      
+      
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你的支持！<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/alipay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/wepay.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -221,107 +260,88 @@ var _hmt = _hmt || [];
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACHUlEQVR42u3aQY7EIAwF0dz/0pltS62g+jY9UkyxGkUZ8OuFgzHXhcf9Mb6ffI90tvXzbUOGDBmvZZCAngBPs/Fw1+8HP5YMGTIOYOwKaJ0ueeg8NhkyZMhYp8j1wuuAyPwyZMiQkTLI+zygdF0ZMmTIIEGQAzIyQ7o13FyLy5Ah44UMfur+/3//pL8hQ4aMVzHuxlhv+HihuyESGTJkjGakSZAfwPWP4dJNpAwZMmYzaqmzdiGDr1JslMqQIWMco5XaSkumx3DBF0OGDBnHMNKWwN7LYXx7KkOGjDMZfLNIkmwnTaeJWIYMGecwahcpeNuAz0aO7dAOV4YMGYMYJL2SVJtuN2szBzdBZMiQMY5BwuqUo2kbILigJkOGjGMY8T+H5W4tdFTcypAh4xgGmSK9ENYpU4MVZciQcQyj38isFbcbWg4yZMgYzeABdRqZPDf2E70MGTKmMnhS4y3JNPTOEZ4MGTJmM3gRW2s68rK2hZchQ8ZoBt8UppgLjF3NAxkyZMxmpJu/2jt8l1pcUYYMGaMZncTHr47V0nG69ZQhQ8ZUxh2O9GJEUILiBsDjd0OGDBlDGbtydopJi+egyyFDhoyhDJ5kO0944iYxxF8PGTJkjGCkie93VytapawMGTKOZxBYel1jV/EsQ4YMGWmItUO61nGbDBkyDmDwIpaf3tXaCenWU4YMGScweOnYbxXwtiW/cCZDhozRjD9fKoSaTxBYiAAAAABJRU5ErkJggg==" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/04/01/矫情的IE/" class="archive-article-date">
-  	<time datetime="2017-04-01T06:41:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-01</time>
-</a>
-        </div>
-    	 
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/04/01/矫情的IE/">矫情的IE</a>
-    </h1>
+  
+    <a href="/2017/04/01/矫情的IE/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">矫情的IE</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+
+  
+    <div class="duoshuo"></div>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">ie</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">compatibility</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">兼容性</a>
-        		</li>
-      		
-		</ul>
-	</div>
 
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/03/31/Hexo博客部署/" class="archive-article-date">
-  	<time datetime="2017-03-31T13:32:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-31</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/03/31/Hexo博客部署/">Hexo博客部署</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">blog</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -357,8 +377,8 @@ var _hmt = _hmt || [];
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

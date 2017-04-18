@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wanghao93.github.io/"/>
-  <updated>2017-04-14T03:09:09.000Z</updated>
+  <updated>2017-04-18T15:14:41.000Z</updated>
   <id>https://wanghao93.github.io/</id>
   
   <author>
@@ -16,11 +16,34 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>代码逻辑.md</title>
+    <link href="https://wanghao93.github.io/2017/04/18/%E5%86%99%E4%BB%A3%E7%A0%81%E9%80%BB%E8%BE%91/"/>
+    <id>https://wanghao93.github.io/2017/04/18/写代码逻辑/</id>
+    <published>2017-04-18T14:49:58.000Z</published>
+    <updated>2017-04-18T15:14:41.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>今天在使用 <code>window.onbeforeUnload</code> 这个方法的时候，在想到如何去屏蔽这个代码的，有的部分代码不希望其执行，但是这个又是全局监听的，所以这时候，考虑把这个方法设为空，然后关闭浏览器，不会弹出提示框，完美解决。<br>代码实现</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">"button"</span>&gt;</span>关闭浏览器页面<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 用户进来这个页面，为其添加一个关闭页面的提醒功能</span></div><div class="line"><span class="built_in">window</span>.onbeforeunload = <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</div><div class="line">  e = e || <span class="built_in">window</span>.event;</div><div class="line"></div><div class="line">  <span class="comment">// 兼容IE8和Firefox 4之前的版本</span></div><div class="line">  <span class="keyword">if</span> (e) &#123;</div><div class="line">    e.returnValue = <span class="string">'关闭提示'</span>;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="comment">// Chrome, Safari, Firefox 4+, Opera 12+ , IE 9+</span></div><div class="line">  <span class="keyword">return</span> <span class="string">'关闭提示'</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 如果要关闭浏览器,兼容ie</span></div><div class="line"><span class="keyword">var</span> btnClick = <span class="built_in">document</span>.getElementById(<span class="string">"button"</span>)</div><div class="line">btnClick.addEventListener(<span class="string">"click"</span>, <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</div><div class="line"></div><div class="line">&#125;)</div><div class="line"></div><div class="line">pollyEvent(btnClick, <span class="string">'click'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="comment">// 此时如果不对window.onbeforeunload 进行处理，则每次都会提示是否关闭浏览器，</span></div><div class="line">  <span class="comment">// 这显然不是我们想要的结果，所以把window.onbeforeunload 清空</span></div><div class="line">  <span class="built_in">window</span>.onbeforeunload = <span class="literal">null</span></div><div class="line">  <span class="comment">// 把这个函数清除了就能避免每次都弹出提示框，达成目标</span></div><div class="line">  <span class="built_in">window</span>.addEventListener ? <span class="built_in">window</span>.close() : (<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">window</span>.open(<span class="string">''</span>,<span class="string">'_self'</span>,<span class="string">''</span>)</div><div class="line">    <span class="built_in">window</span>.close()</div><div class="line">  &#125;)()</div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">pollyEvent</span> (<span class="params">elm, type, callback</span>) </span>&#123;</div><div class="line">  <span class="built_in">document</span>.addEventListener ? elm.addEventListener(type, callback) : elm.atachEvent(<span class="string">'on'</span>+type, callback)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;今天在使用 &lt;code&gt;window.onbeforeUnload&lt;/code&gt; 这个方法的时候，在想到如何去屏蔽这个代码的，有的部分代码不希望其执行，但是这个又是全局监听的，所以这时候，考虑把这个方法设为空，然后关闭浏览器，不会弹出提示框，完美解决。&lt;br&gt;代码实现&lt;/p
+    
+    </summary>
+    
+    
+      <category term="logic" scheme="https://wanghao93.github.io/tags/logic/"/>
+    
+  </entry>
+  
+  <entry>
     <title>矫情的IE</title>
     <link href="https://wanghao93.github.io/2017/04/01/%E7%9F%AB%E6%83%85%E7%9A%84IE/"/>
     <id>https://wanghao93.github.io/2017/04/01/矫情的IE/</id>
     <published>2017-04-01T06:41:21.000Z</published>
-    <updated>2017-04-14T03:09:09.000Z</updated>
+    <updated>2017-04-18T15:14:26.000Z</updated>
     
     <content type="html"><![CDATA[<p>在那洪荒时代，ie一统天下，诸子百家，莫敢不服。各大网站，也只能俯首帖耳，想着办法去兼容他，不是它有多么好，而是window+ie让人欲罢不能。<br>Google的V8引擎，给人带来了希望，性能提速，前端开始繁荣，移动互联网时代，开始到来。微软也开始面向开源，ie逐渐退出历史舞台，自家格了自家ie的命，也是一代大家所为。<br>奈何使用者多年习惯使然，中国的系统更新缓慢。国内厂商，套壳的浏览器，创新不多，但能开始不去使用ie内核，也是极为鼓舞人心之事。陈旧的浏览器和系统，依然有大批人去进行使用。只能在各个层面去努力进行淘汰，未来的世界终究一片光明！<br>如此多的开发者和从业者，给人们带来更快更酷炫更便捷的方式为何没人使用？终究是人性中的惰性，不可轻易更换习惯？<br>人们要使用，那么我们就只有宠着他们，顾客是上帝，此乃真理！</p>
 <p>以 <strong>矫情的IE</strong>为题，记录工作中，遇到的各个浏览器兼容性的问题。取名ie，但不限于ie，但前端开发者，最为痛心疾首者也就IE是也。</p>
