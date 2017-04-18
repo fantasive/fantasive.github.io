@@ -5,10 +5,10 @@
     
   <url>
     <loc>https://wanghao93.github.io/2017/04/18/%E5%86%99%E4%BB%A3%E7%A0%81%E9%80%BB%E8%BE%91/</loc>
-    <lastmod>2017-04-18T15:14:41.000Z</lastmod>
+    <lastmod>2017-04-18T23:12:09.000Z</lastmod>
     <data>
         <display>
-        <title>代码逻辑.md</title>
+        <title>代码逻辑</title>
         <pubTime>2017-04-18T14:49:58.000Z</pubTime>
         
         <tag>logic</tag>
